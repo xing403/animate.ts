@@ -25,10 +25,14 @@
     "global.d.ts"
   ],
   "scripts": {
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vitepress": "1.0.0-rc.41"
   },
   "exports": {
     ".": {
