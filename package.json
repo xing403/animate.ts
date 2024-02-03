@@ -1,32 +1,40 @@
 {
   "name": "animate.ts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "animate.ts is an animation library for Typescript.",
   "keywords": [
     "animate",
     "animation",
-    "ts",
     "typescript"
   ],
   "author": {
     "name": "星如雨",
-    "email": "2983181595@qq.com"
+    "email": "2983181595@qq.com",
+    "url": "https://github.com/xing403"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/xing403/animate.ts"
   },
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "global.d.ts"
   ],
   "scripts": {
     "build": "tsc -p ."
   },
   "devDependencies": {
     "typescript": "^5.2.2"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
   }
 }

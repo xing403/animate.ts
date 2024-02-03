@@ -1,6 +1,6 @@
-export type CallBackFn = (value: number,x: number) => () => void
+export type CallBackFn = (value: number, x: number) => any
 
-export type IEasingFn = (value: number) => number
+export type EasingFn = (value: number) => number
 
 export interface IAnimate {
   /**
@@ -19,11 +19,10 @@ export interface IAnimate {
   /**
    * 被执行的缓动函数
    */
-  easing: IEasingFn
+  easing: EasingFn
 
   /**
    * 每步将执行的回调
    */
   onStep: CallBackFn
 }
-

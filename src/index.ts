@@ -1,4 +1,7 @@
-import type { IAnimate } from './types';
+import type { IAnimate } from '../global';
+
+export * from "./animate"
+
 function animate({ start, end, duration = 1000, easing, onStep }: IAnimate): () => void {
   let currentTime = 0;
   let initFrameTime = performance.now();
