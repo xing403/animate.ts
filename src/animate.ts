@@ -150,3 +150,39 @@ export function easeInOutBounce(x: number): number {
     ? (1 - easeOutBounce(1 - 2 * x)) / 2
     : (1 + easeOutBounce(2 * x - 1)) / 2;
 }
+
+
+export default {
+  easeInSine,
+  easeOutSine,
+  easeInOutSine,
+  easeInQuad,
+  easeOutQuad,
+  easeInOutQuad,
+  easeInCubic,
+  easeOutCubic,
+  easeInOutCubic,
+  easeInQuart,
+  easeOutQuart,
+  easeInOutQuart,
+  easeInQuint,
+  easeOutQuint,
+  easeInOutQuint,
+  easeInExpo,
+  easeOutExpo,
+  easeInOutExpo,
+  easeInCirc,
+  easeOutCirc,
+  easeInOutCirc,
+  easeInBack,
+  easeOutBack,
+  easeInOutBack,
+  easeInElastic,
+  easeOutElastic,
+  easeInOutElastic,
+  easeInBounce,
+  easeOutBounce,
+  easeInOutBounce,
+} as {
+  [key:string]: (value: number) => number
+}

@@ -12,14 +12,14 @@ npm install animate.ts
 ## usage
 
 ```typescript
-import animate, { easeOutBounce } from 'animate.ts';
+import animate, { easing } from 'animate.ts';
 
 // an animation will run for 3 seconds
 const stop = animate({
   start: 0,
   end: 1000,
   duration: 3000,
-  easing: easeOutBounce,
+  easing: easing.easeOutBounce,
   onStep: (progress: number, x: number) => {
     console.log("current progress",progress); // 'easing' return value
     console.log("current x",x); // the range of x is form start to end

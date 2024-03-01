@@ -1,8 +1,8 @@
 import type { IAnimate } from '../global';
 
-export * from "./animate"
+import easing from "./animate"
 
-function animate({ start, end, duration = 1000, easing, onStep }: IAnimate): () => void {
+function animate(config: IAnimate): () => void {
   let currentTime = 0;
   let initFrameTime = performance.now();
   let isRunning = true;
@@ -10,16 +10,22 @@ function animate({ start, end, duration = 1000, easing, onStep }: IAnimate): () 
   const step = () => {
     if (!isRunning) return;
 
-    currentTime = Math.min((performance.now() - initFrameTime) / duration, 1);
+    currentTime = Math.min((performance.now() - initFrameTime) / (config.duration ?? 3000), 1);
 
-    const easedValue = easing(currentTime);
+    const easedValue = config.easing(currentTime);
 
-    const interpolatedValue = start + (end - start) * easedValue;
+    const interpolatedValue = config.start + (config.end - config.start) * easedValue;
 
-    // 执行每一步操作并记录结果
-    onStep(interpolatedValue, currentTime * (start + (end - start)));
+    // 当前步骤中 {y, x}
+    config.onStep(interpolatedValue, currentTime * (config.start + (config.end - config.start)));
 
-    if (currentTime === 1) isRunning = false;
+    if (currentTime === 1) {
+      if (config.infinite) {
+        initFrameTime = performance.now();
+      } else {
+        isRunning = false
+      }
+    };
     // 立即请求下一帧
     requestAnimationFrame(step);
   };
@@ -29,6 +35,10 @@ function animate({ start, end, duration = 1000, easing, onStep }: IAnimate): () 
 
   // 返回一个停止动画的函数
   return () => isRunning = false;
+}
+
+export {
+  easing
 }
 
 export default animate
