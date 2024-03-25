@@ -1,7 +1,5 @@
 import type { IAnimate } from '../global';
 
-import easing from "./animate"
-
 function animate(config: IAnimate): () => void {
   let currentTime = 0;
   let initFrameTime = performance.now();
@@ -37,8 +35,5 @@ function animate(config: IAnimate): () => void {
   return () => isRunning = false;
 }
 
-export {
-  easing
-}
 
 export default animate

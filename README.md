@@ -12,8 +12,11 @@ npm install animate.ts
 ## usage
 
 ```typescript
-import animate, { easing } from 'animate.ts';
+import animate from 'animate.ts';
 
+function easing(x: number): number {
+  return x;
+}
 // an animation will run for 3 seconds
 const stop = animate({
   start: 0,
@@ -25,6 +28,12 @@ const stop = animate({
     console.log("current x",x); // the range of x is form start to end
   }
 })
+```
+
+## use easing
+
+```ts
+import easing from "animate.ts/dist/easing.js";
 ```
 
 ## stop animation

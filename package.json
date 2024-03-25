@@ -1,6 +1,6 @@
 {
   "name": "animate.ts",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "animate.ts is an animation library for Typescript.",
   "keywords": [
     "animate",
@@ -25,14 +25,10 @@
     "global.d.ts"
   ],
   "scripts": {
-    "build": "tsc -p .",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "build": "tsc -p ."
   },
   "devDependencies": {
-    "typescript": "^5.2.2",
-    "vitepress": "1.0.0-rc.41"
+    "typescript": "^5.2.2"
   },
   "exports": {
     ".": {
