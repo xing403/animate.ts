@@ -1,6 +1,6 @@
 {
   "name": "animate.ts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "animate.ts is an animation library for Typescript.",
   "keywords": [
     "animate",
@@ -39,6 +39,8 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./global.d.ts": "./global.d.ts",
+    "./dist/*": "./dist/*"
   }
 }
